@@ -18,6 +18,7 @@ int main()
     cout << "Input number:" << endl;
     int osnov_znach,bin=0,sch=1;
     cin >> osnov_znach;
+    int hhex = osnov_znach;
     while (osnov_znach) {
         bin +=(osnov_znach % 2)*sch;
         sch *= 10;
@@ -26,7 +27,8 @@ int main()
         
     }
     cout << "binary: " << bin << endl;
-    cout << "hexagen: " << hex << osnov_znach << endl;
+    cout << "hexagen:";
+    cout << hex << hhex << endl;
 
 
 
