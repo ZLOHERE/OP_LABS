@@ -22,14 +22,11 @@ int main()
         bin +=(osnov_znach % 2)*sch;
         sch *= 10;
         osnov_znach /= 2;
-        //ddddddddddddd
-        //ddddddddddddd
-        //ddddddddddddd
-        //ddddddddddddd
-        //dddddddddddddddddd
+        
         
     }
-    cout << "bin: " << bin << endl;
+    cout << "binary: " << bin << endl;
+    cout << "hexagen: " << hex << osnov_znach << endl;
 
 
 
