@@ -26,7 +26,7 @@ int main()
         //ddddddddddddd
         //ddddddddddddd
         //ddddddddddddd
-        //ddddddddddddd
+        //dddddddddddddddddd
         
     }
     cout << "bin: " << bin << endl;
