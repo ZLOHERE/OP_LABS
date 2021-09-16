@@ -22,14 +22,15 @@ int main()
     while (osnov_znach) {
         bin +=(osnov_znach % 2)*sch;
         sch *= 10;
-        osnov_znach /= 2;
-        
-        
+        osnov_znach /= 2;    
     }
     cout << "binary: " << bin << endl;
-    cout << "hexagen:";
+    cout << "hexagen: ";
     cout << hex << hhex << endl;
-
+    cout << "bool: " << (bool)hhex << endl;
+    cout << "double: " << (double)hhex << endl;
+    cout << "char: " << (char)hhex << endl;
+    
 
 
 }
