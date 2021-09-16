@@ -30,7 +30,18 @@ int main()
     cout << "bool: " << (bool)hhex << endl;
     cout << "double: " << (double)hhex << endl;
     cout << "char: " << (char)hhex << endl;
-    
+    cout << "input a*x=b" << endl;
+    int a, b;
+    cin >> a>>b;
+    cout << a << "*x=" << b << endl;
+    cout << "x=" << b << "/" << a << endl;
+    cout << "x=" << b / a << endl;
+    cout << "answer: " << b / a << endl;
+    cout << "input start and finish point:" << endl;
+    cin >> a >> b;
+    cout << "center:" << (b - a) / 2 + a << endl;
+
+
 
 
 }
