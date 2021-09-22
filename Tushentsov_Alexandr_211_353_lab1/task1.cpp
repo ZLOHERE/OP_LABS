@@ -22,7 +22,7 @@ int main()
     int hhex = osnov_znach;
     cout << "binary: " << bitset<16>(int(osnov_znach)) << endl;
     cout << "hexagen: ";
-    cout << hex << hhex << endl;
+    cout << hex << hhex <<dec<< endl;
     cout << "bool: " << (bool)hhex << endl;
     cout << "double: " << (double)hhex << endl;
     cout << "char: " << (char)hhex << endl;
