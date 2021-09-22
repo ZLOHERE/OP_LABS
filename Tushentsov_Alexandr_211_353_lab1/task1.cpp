@@ -1,6 +1,7 @@
 ﻿
 
 #include <iostream>
+#include<bitset>
 using namespace std;
 
 int main()
@@ -19,12 +20,7 @@ int main()
     int osnov_znach,bin=0,sch=1;
     cin >> osnov_znach;
     int hhex = osnov_znach;
-    while (osnov_znach) {
-        bin +=(osnov_znach % 2)*sch;
-        sch *= 10;
-        osnov_znach /= 2;    
-    }
-    cout << "binary: " << bin << endl;
+    cout << "binary: " << bitset<16>(int(osnov_znach)) << endl;
     cout << "hexagen: ";
     cout << hex << hhex << endl;
     cout << "bool: " << (bool)hhex << endl;
