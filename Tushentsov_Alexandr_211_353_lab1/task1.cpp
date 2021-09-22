@@ -35,7 +35,7 @@ int main()
     cout << "answer: " << b / a << endl;
     cout << "input start and finish point:" << endl;
     cin >> a >> b;
-    cout << "center:" << (b - a) / 2 + a << endl;
+    cout << "center:" << ((b - a) / 2.) + a << endl;
 
 
 
