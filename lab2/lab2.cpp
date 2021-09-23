@@ -23,7 +23,6 @@ void task2() {
         res = res * (n - i) / (i+1);    
     }
     cout << "результат: " << res << endl;
-
 }
 void task3(){
     int sim;
@@ -43,7 +42,6 @@ void task3(){
 
         }
     }
-
 }
 void task4(){
 
@@ -52,25 +50,31 @@ int main()
 {
     int choice = 0;
     setlocale(LC_ALL, "Russian");
-    cout << "Что вы хотите выполнить ?\n" << "1.задание 1\n" << "2.задание 2\n" << "3.задание 3\n" << "4.выход\n";
-    cin >> choice;
-    switch (choice)
-    {
-    case 1:
-        task1();
-        break;
-    case 2:
-        task2();
-        break;
-    case 3:
-        task3();
-        break;
-    case 4:
-        cout << "Выход";
-        break;
-    default:
-        cout << "Вы вышли за предел\n";
-        break;
+    while (true) {
+        cout << "Что вы хотите выполнить ?\n" << "1.задание 1\n" << "2.задание 2\n" << "3.задание 3\n" << "4.выход\n";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            task1();
+            break;
+        case 2:
+            task2();
+            break;
+        case 3:
+            task3();
+            break;
+        case 4:
+            cout << "Выход";
+            break;
+        default:
+            cout << "Вы вышли за предел\n";
+            break;
+            return 0;
+        }
+        if (choice == 4) {
+            break;
+        }
     }
 
 }
