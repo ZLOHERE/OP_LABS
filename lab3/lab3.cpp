@@ -20,7 +20,7 @@ void sort1(int* mas,int num) {
     }
 }
 void sort2(char* mas, int num) {
-    int mass[int('z')] = {0};//подсчет кол-ва букв
+    int mass[int('z')+1] = {0};//подсчет кол-ва букв
     for (int i = 0; i < num; i++)
     {
         for (int j = int('a'); j <= 'z'; j++)
@@ -32,7 +32,7 @@ void sort2(char* mas, int num) {
         }
 
     }
-    for (int i = int('a'); i < 'z'; i++)
+    for (int i = int('a'); i <= int('z'); i++)
     {
         for (int j = mass[i]; j>0 ; j--)
         {
@@ -48,7 +48,7 @@ void sort3(int* arr, int size) {
         sort3(&arr[0], left_size);
         sort3(&arr[left_size], right_size);
     }
-    int* arr2=new int[size];
+    int arr2[1000];
     int cnt, lcnt, rcnt;
     rcnt = left_size;
     cnt = lcnt = 0;
@@ -94,7 +94,7 @@ int main()
     case 1:
     {cout << "Введите количество элементов целочисленного массива: ";
     cin >> ct_mas;
-    int* arr = new int[ct_mas]; //объявление динамического массива
+    int arr[1000] = {0}; //объявление динамического массива
     cout << "Введите значения для целочисленного массива: \n";
     for (int i = 0; i < ct_mas; i++)
     {
@@ -105,7 +105,7 @@ int main()
     case 2:
     {cout << "Введите количество элементов буквенного массива: ";
         cin >> ct_mas;
-        char* arr1 = new char[ct_mas]; //динамический массив только уже символьного типа
+        char arr1[1000] = {0}; //динамический массив только уже символьного типа
         cout << "Введите значения для буквенного массива: \n";
         for (int i = 0; i < ct_mas; i++)
         {
@@ -117,7 +117,7 @@ int main()
     case 3:
     {cout << "Введите количество элементов целочисленного массива: ";
     cin >> ct_mas;
-    int* arr1 = new int[ct_mas]; 
+    int arr1[1000] = {0};
     cout << "Введите значения для целочисленного массива: \n";
     for (int i = 0; i < ct_mas; i++)
     {
