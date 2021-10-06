@@ -20,10 +20,10 @@ void sort1(int* mas,int num) {
     }
 }
 void sort2(char* mas, int num) {
-    int mass[122] = {0};//подсчет кол-ва букв
+    int mass[int('z')] = {0};//подсчет кол-ва букв
     for (int i = 0; i < num; i++)
     {
-        for (int j = 97; j <= 122; j++)
+        for (int j = int('a'); j <= 'z'; j++)
         {
             if (int(mas[i]) == j) {//подсчет кол-ва букв
                 mass[j] += 1;
@@ -32,7 +32,7 @@ void sort2(char* mas, int num) {
         }
 
     }
-    for (int i = 97; i < 122; i++)
+    for (int i = int('a'); i < 'z'; i++)
     {
         for (int j = mass[i]; j>0 ; j--)
         {
