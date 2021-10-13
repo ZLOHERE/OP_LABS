@@ -13,6 +13,7 @@ int main()
     int size;
     int* arr = nullptr;
     while (true) {
+        
         cout << "1.Ввод массива\n" <<
             "2.Вывод массива в консоль\n" <<
             "3.Сортировка по сумме цифр, стоящих на четных местах\n" <<
@@ -23,15 +24,18 @@ int main()
         {
         case 1:
             input(arr,&size);
+            system("cls");
             break;
         case 2:
             output(arr, size);
             break;
         case 3:
             sum_sort(arr, size);
+            system("cls");
             break;
         case 4:
             sor_last_num(arr,size);
+            system("cls");
             break;
         case 5:
         default:
@@ -70,12 +74,6 @@ void sor_last_num(int* mas, int len) {
                 mas[j] = mas[j + 1];
                 mas[j + 1] = t;
             }
-        }
-    }
-    for (int i = 0; i < len; i++)
-    {
-        for (int j = 0; j < len - i - 1; j++)
-        {
             if ((mas[j] % 10) == (mas[j + 1] % 10))
             {
                 if (mas[j] < mas[j + 1])
