@@ -39,6 +39,7 @@ int main()
             break;
         case 5:
         default:
+            delete[] arr;
             return 0;
         }
     }
