@@ -33,21 +33,23 @@ int find_substring1(char* str_for_search_in, char* substring, int start) {
         return 257;
     return ((strlen(str_for_search_in) - 1) - (strlen(newstr) - 1));
 }
-void encrypt(char* str_input, int key, char*& str_encrypt) {
+void encrypt(char* str_input, int key, char*& str_encrypt, int enc_shift) {
+    if (str_encrypt != nullptr)
+        delete[] str_encrypt;
     str_encrypt = new char[key];
     for (int i = 0; i < key; i++)
     {
-        if ((str_input[i]) == 'z') {
-            str_encrypt[i] = 'a';
+        if ((str_input[i]) + enc_shift>'z') {
+            str_encrypt[i] = char(str_input[i]-26 + enc_shift);
         }
         else
         {
-            if ((str_input[i]) == 'Z') {
-                str_encrypt[i] = 'A';
+            if (((str_input[i]) +enc_shift> 'Z') and(str_input[i]<'a')) {
+                str_encrypt[i] = char(str_input[i] - 26 + enc_shift);
             }
             else
             {
-                str_encrypt[i] = char(str_input[i] + 1);
+                str_encrypt[i] = char(str_input[i] + enc_shift);
             }
         }
     }
@@ -165,7 +167,10 @@ int main()
                 cin >> text[i];
             }
             char* str_for_encrypt = nullptr;
-            encrypt(text, i, str_for_encrypt);
+            int znach_for_sdvig;
+            cout << "Введите значение сдвига:\n";
+            cin >> znach_for_sdvig;
+            encrypt(text, i, str_for_encrypt, znach_for_sdvig);
             system("cls");
             for (int l = 0; l < i; l++)
             {
