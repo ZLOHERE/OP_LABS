@@ -1,0 +1,5 @@
+﻿  lab4.2.cpp
+C:\Users\ZLO_HERE\Desktop\program\OP_LABS\lab4.2\lab4.2.cpp(9,32): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\ZLO_HERE\Desktop\program\OP_LABS\lab4.2\lab4.2.cpp(19,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\ZLO_HERE\Desktop\program\OP_LABS\lab4.2\lab4.2.cpp(64): warning C4715: file_copy: значение возвращается не при всех путях выполнения
+  lab4.2.vcxproj -> C:\Users\ZLO_HERE\Desktop\program\OP_LABS\Tushentsov_Alexandr_211_353_lab1\x64\Debug\lab4.2.exe
