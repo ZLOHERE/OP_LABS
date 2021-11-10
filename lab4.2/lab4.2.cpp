@@ -7,11 +7,6 @@ using namespace std;
 string file_format(string file_path_full) {
     int n;
     n=file_path_full.rfind(".");
-    string str;
-    for (int i = n; i < file_path_full.length() ; i++)
-    {
-        str = str + file_path_full[i];
-    }
     return file_path_full.substr(n,string::npos);
 }
 string file_name(string file_path_full) {
