@@ -12,7 +12,7 @@ string file_format(string file_path_full) {
     {
         str = str + file_path_full[i];
     }
-    return str;
+    return file_path_full.substr(n,string::npos);
 }
 string file_name(string file_path_full) {
     string str;
@@ -51,6 +51,10 @@ bool file_copy(string file_path_full) {
     else {
         ofstream fout;
         fout.open(file_path(file_path_full) + file_name(file_path_full) + "_copy" + file_format(file_path_full));
+        if (!fout.is_open()) {
+            fout.close();
+            return 0;
+        }
         string temp;
         while (!fin.eof()) {
             getline(fin, temp);
