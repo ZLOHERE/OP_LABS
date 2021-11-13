@@ -136,3 +136,24 @@ double Matrix::get_elem(int i, int j)
 {
 	return this->elem[i*this->col+j];
 }
+
+double Matrix::trace()
+{
+	if (this->col != this->row)
+	{
+		cout << "Error: Matrix isn`t square" << endl;
+		return 0.0;
+	}
+	double n=0;
+	for (int i = 0; i < this->col*this->row; i+=(1+this->col))
+	{
+		n += this->elem[i];
+	}
+	return n;
+}
+
+double Matrix::det()
+{
+
+	return 0.0;
+}
