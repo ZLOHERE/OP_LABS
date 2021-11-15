@@ -22,8 +22,6 @@ public:
 	int get_rows();
 	double get_elem(int i, int j);
 	double trace();
-	double det();
-
 };
 
 

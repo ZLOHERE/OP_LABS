@@ -152,8 +152,3 @@ double Matrix::trace()
 	return n;
 }
 
-double Matrix::det()
-{
-
-	return 0.0;
-}
