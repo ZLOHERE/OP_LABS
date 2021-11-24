@@ -30,11 +30,15 @@ Matrix::Matrix(int rows, int cols)
 		this->elem[i] = 0;
 	}
 }
-Matrix::Matrix(int rows, int cols, int*& arr)
+Matrix::Matrix(int rows, int cols, int*& arr) // вот перегрузка
 {
 	this->row = rows;
 	this->col = cols;
-	this->elem = arr;
+	this->elem = new int[this->row*this->col];
+	for (int i = 0; i < this->row*this->col; i++)
+	{
+		this->elem[i] = arr[i];
+	}
 }
 
 Matrix::~Matrix()
@@ -175,6 +179,37 @@ void Matrix::input()
 		cin >> this->elem[i];
 	}
 	return;
+}
+
+void Matrix::input(int i, int j)
+{
+	if (this->elem!=nullptr)
+	{
+		delete[]this->elem;
+	}
+	this->elem = new int[i * j];
+	this->row = i;
+	this->col = j;
+	cout << "Input matrix: \n";
+	for (int i = 0; i < this->col*this->row; i++)
+	{
+		cin >> this->elem[i];
+	}
+}
+
+void Matrix::input(int i, int j, int*& arr)
+{
+	if (this->elem!=nullptr)
+	{
+		delete[]this->elem;
+	}
+	this->elem = new int[i * j];
+	for (int f = 0; f < i*j; f++)
+	{
+		this->elem[f] = arr[f];
+	}
+	this->row = i;
+	this->col = j;
 }
 
 void Matrix::print()
