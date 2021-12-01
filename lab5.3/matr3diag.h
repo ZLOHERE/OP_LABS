@@ -1,6 +1,8 @@
 #pragma once
 #ifndef matr3diag
 #define matr3diag
+#include <iostream>
+using namespace std;
 class Matr3diag
 {
 private:
@@ -19,9 +21,22 @@ public:
 	void input(int size_of_matr);
 	void print();
 	int columns();
+	void operator+=(Matr3diag& temp);
+	void operator-=(Matr3diag& temp);
+	void operator=(Matr3diag temp);
+	Matr3diag operator+(Matr3diag& temp);
+	Matr3diag operator-(Matr3diag& temp);
+	Matr3diag operator-();
+	Matr3diag operator*(int j);
+	Matr3diag operator*(Matr3diag& temp);
+	double det();
+
 	
 
 	friend std::ostream& operator << (std::ostream& out, const Matr3diag& temp);
+
+	friend istream& operator>>(istream& in, Matr3diag& temp);
+
 };
 
 #endif
