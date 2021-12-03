@@ -1,5 +1,5 @@
 ﻿#include <iostream>   
-#include "matr3diag.h"                                                                                                                                         |
+#include "matr3diag.h"                                                                                                                                         
 using namespace std;
 
 int main()
@@ -8,14 +8,14 @@ int main()
 	Matr3diag MatrA;
 	Matr3diag MatrB;
 	Matr3diag MatrC;
-	MatrA.input(4);
-	MatrB.input(3);
+	MatrA.input(9);
+	MatrB.input(9);
 	//cout << MatrA;
 	//cout<<MatrB;
-	MatrC = MatrB*MatrA;
+	//MatrC = MatrB*MatrA;
 	cout << MatrA;
 	cout << MatrB;
-	cout << MatrC;
+	cout<<MatrA*MatrB;
 	cout << MatrA.det();
 	
 
