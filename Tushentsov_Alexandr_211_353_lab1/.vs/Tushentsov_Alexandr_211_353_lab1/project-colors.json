@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1a23288a-405b-40b7-b015-f3d865bfe989": {
+      "ProjectGuid": "1a23288a-405b-40b7-b015-f3d865bfe989",
+      "DisplayName": "lab6.1",
+      "ColorIndex": 0
+    },
+    "bdd29298-8189-4a09-818e-fa487ba319f9": {
+      "ProjectGuid": "bdd29298-8189-4a09-818e-fa487ba319f9",
+      "DisplayName": "lab4.1",
+      "ColorIndex": 1
+    },
+    "36327814-26bf-468a-95ee-aea138a40da7": {
+      "ProjectGuid": "36327814-26bf-468a-95ee-aea138a40da7",
+      "DisplayName": "lab5.3",
+      "ColorIndex": 2
+    },
+    "72258e23-9e7b-4369-9586-d4999a64a33c": {
+      "ProjectGuid": "72258e23-9e7b-4369-9586-d4999a64a33c",
+      "DisplayName": "lab5.4",
+      "ColorIndex": 3
+    },
+    "e89b830f-fafc-4f59-b57d-cb774138179d": {
+      "ProjectGuid": "e89b830f-fafc-4f59-b57d-cb774138179d",
+      "DisplayName": "lab4",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

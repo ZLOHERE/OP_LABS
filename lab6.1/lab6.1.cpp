@@ -2,29 +2,32 @@
 #include<stack>
 #include<string>
 using namespace std;
-
+void proverka(string str);
 int main()
 {
 	setlocale(LC_ALL, "ru");
-    string str;
+	string str;
+	getline(cin, str);
+	proverka(str);	
+}
+void proverka(string str) {
 	stack<char> arc;
-    cin >> str;
 	for (int i = 0; i < str.size(); i++)
 	{
-		if ((str[i]=='[') or (str[i] == '(') or (str[i] == '{'))
+		if ((str[i] == '[') or (str[i] == '(') or (str[i] == '{'))
 		{
 			arc.push(str[i]);
 		}
 		if (str[i] == ']')
 		{
-			if (arc.top()=='[')
+			if (arc.top() == '[')
 			{
 				arc.pop();
 			}
 			else
 			{
 				cout << "скобки введены некорректно" << endl;
-				return 0;
+				return;
 			}
 		}
 		if (str[i] == ')')
@@ -36,7 +39,7 @@ int main()
 			else
 			{
 				cout << "скобки введены некорректно" << endl;
-				return 0;
+				return;
 			}
 		}
 		if (str[i] == '}')
@@ -48,17 +51,18 @@ int main()
 			else
 			{
 				cout << "скобки введены некорректно" << endl;
-				return 0;
+				return;
 			}
 		}
 	}
-	if (arc.empty()==1)
+	if (arc.empty() == 1)
 	{
-		cout << "скобки введены корректно"<<endl;
+		cout << "скобки введены корректно" << endl;
+		return;
 	}
 	else
 	{
 		cout << "скобки введены некорректно" << endl;
+		return;
 	}
-	return 0;
 }
