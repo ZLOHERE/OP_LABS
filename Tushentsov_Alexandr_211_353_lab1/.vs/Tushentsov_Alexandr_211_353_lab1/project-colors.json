@@ -45,7 +45,17 @@
       "ProjectGuid": "bd2ef1e9-1d80-4822-9b6a-d3342fde3b48",
       "DisplayName": "lab4.2",
       "ColorIndex": 8
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "a52b6e0a-2eda-431d-834d-38e3b0c77017": {
+      "ProjectGuid": "a52b6e0a-2eda-431d-834d-38e3b0c77017",
+      "DisplayName": "lab6.3",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }
