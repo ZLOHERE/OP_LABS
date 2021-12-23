@@ -104,6 +104,11 @@ int main()
 		cout << VO.back();
 		VO.pop_back();
 	}
+	for (int i = 0; i < size; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
 }
 int sortmas_x(int**& arr, int size) {
 	int minimum=arr[0][0];
