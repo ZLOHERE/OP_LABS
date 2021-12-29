@@ -5,16 +5,23 @@
 using namespace std;
 int main()
 {
-    unordered_set<string> login;
+    queue<string> login;
+    unordered_set<string> link;
     queue<int> password;
     int last_size, pass, cnt;
     string log;
     last_size = login.size();
+    cout << "Input count of logins";
     cin >> cnt;
     for (int i = 0; i < cnt; i++)
     {
+ /*       cout << "Input login: ";*/
         cin >> log;
-        login.insert(log);
+        if (link.find(log) == link.end()) {
+            login.push(log);
+            link.insert(log);
+        }
+      /*  cout << "input password: ";*/
         cin >> pass;
         if (last_size!=(login.size()))
         {
@@ -22,9 +29,10 @@ int main()
             last_size = login.size();
         }
     }
-    for (auto it = login.begin(); it != login.end(); it++)
+    for (int i = 0; i < last_size; i++)
     {
-        cout << *it << "\t";
+        cout << login.front() << "\t";
+        login.pop();
     }
     cout << endl;
     for (int i = 0; i < last_size; i++)

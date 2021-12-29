@@ -8,6 +8,12 @@ struct people {
 	string name;
 	int age;
 };
+ostream& operator<<(ostream& out, const people& temp) {
+
+	out << temp.surname << " " << temp.name << " " << temp.age << endl;
+	return out;
+
+}
 template<typename T>
 void sort(T*& temp, int maxi) {
 	T per;
@@ -32,11 +38,23 @@ void print(T*& temp, int maxi) {
 	}
 	cout << endl;
 }
-void print_struct(people*& temp, int size) {
-	for (int i = 0; i < size; i++)
+
+template<typename T>
+void sort_of_internal(T temp)
+{
+	cout << "Input count of values:";
+	int axel;
+	cin >> axel;
+	T* str = new T[axel];
+	cout << "Input values:";
+	for (int i = 0; i < axel; i++)
 	{
-		cout << temp[i].surname << " " << temp[i].name << " " << temp[i].age << endl;
+		cin >> str[i];
 	}
+	sort(str, axel);
+	print(str, axel);
+	delete[] str;
+	
 }
 
 int main()
@@ -55,63 +73,23 @@ int main()
 			switch (choice)
 			{
 			case 1: {
-				cout << "Input count of values:";
-				int axel;
-				cin >> axel;
-				string* str = new string[axel];
-				cout << "Input values:";
-				for (int i = 0; i < axel; i++)
-				{
-					cin >> str[i];
-				}
-				sort(str, axel);
-				print(str, axel);
-				delete[] str;
+				string t="";
+				sort_of_internal(t);
 				break;
 			}
 			case 2: {
-				cout << "Input count of values:";
-				int axel;
-				cin >> axel;
-				int* str = new int[axel];
-				cout << "Input values:";
-				for (int i = 0; i < axel; i++)
-				{
-					cin >> str[i];
-				}
-				sort(str, axel);
-				print(str, axel);
-				delete[] str;
+				int t=0;
+				sort_of_internal(t);
 				break;
 			}
 			case 3: {
-				cout << "Input count of values:";
-				int axel;
-				cin >> axel;
-				double* str = new double[axel];
-				cout << "Input values:";
-				for (int i = 0; i < axel; i++)
-				{
-					cin >> str[i];
-				}
-				sort(str, axel);
-				print(str, axel);
-				delete[] str;
+				double t=0.0;
+				sort_of_internal(t);
 				break;
 			}
 			case 4: {
-				cout << "Input count of values:";
-				int axel;
-				cin >> axel;
-				char* str = new char[axel];
-				cout << "Input values:";
-				for (int i = 0; i < axel; i++)
-				{
-					cin >> str[i];
-				}
-				sort(str, axel);
-				print(str, axel);
-				delete[] str;
+				char t='a';
+				sort_of_internal(t);
 				break;
 			}
 			default:
@@ -158,7 +136,7 @@ int main()
 						}
 					}
 				}
-				print_struct(mus, axel);
+				print(mus, axel);
 				delete[] mus;
 				break;
 			}
@@ -183,7 +161,7 @@ int main()
 						}
 					}
 				}
-				print_struct(mus, axel);
+				print(mus, axel);
 				delete[] mus;
 				break;
 			}
@@ -208,7 +186,7 @@ int main()
 						}
 					}
 				}
-				print_struct(mus, axel);
+				print(mus, axel);
 				delete[] mus;
 				break;
 			}
