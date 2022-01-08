@@ -20,26 +20,12 @@ void sort(T* temp, int maxi) {
 	int first, last, znach;
 	first = 0;
 	last = maxi - 1;
-	znach = maxi / 2;
-	mid = temp[znach];
+	mid = temp[maxi / 2];
 	while (last>=first)
 	{
-		while (temp[first]<=mid)
-		{
-			first++;
-			if (first==maxi)
-			{
-				break;
-			}
-		}
-		while (temp[last]>=mid)
-		{
-			last--;
-			if (last == -1)
-			{
-				break;
-			}
-		}
+		while (temp[first]<mid) first++;
+
+		while (temp[last]>mid) last--;
 		if (last>=first)
 		{
 			per = temp[last];
@@ -48,42 +34,9 @@ void sort(T* temp, int maxi) {
 			first++;
 			last--;
 		}
-		else
-		{
-			if (maxi==2)
-			{
-				if (temp[0] > temp[1]) {
-					per = temp[0];
-					temp[0] = temp[1];
-					temp[1] = per;
-				}
-				continue;
-			}
-			if (((last==-1 and first==0)or(first==maxi and last==maxi-1)))
-			{
-				first = 0;
-				last = maxi - 1;
-				if (znach!=0)
-				{
-					znach--;
-				}
-				else
-				{
-					znach = maxi - 1;
-				}
-				mid = temp[znach];
-
-			}
-		}
 	}
-	if (last>0)
-	{
-		sort(temp, last + 1);
-	}
-	if (first < maxi)
-	{
-		sort(&temp[first], maxi - first);
-	}
+	if (last>0) sort(temp, last + 1);
+	if (first < maxi) sort(&temp[first], maxi - first);
 }
 template<typename T>
 void print(T*& temp, int maxi) {
@@ -92,6 +45,83 @@ void print(T*& temp, int maxi) {
 		cout << temp[i] << " ";
 	}
 	cout << endl;
+}
+template<typename T>
+void sort(T* temp, int maxi, string mode)
+{
+	T per, mid;
+	int first, last, znach;
+	first = 0;
+	last = maxi - 1;
+	znach = maxi / 2;
+	mid = temp[znach];
+
+	while (last >= first)
+	{
+
+		if (mode == "surname") {
+			while (temp[first].surname < mid.surname)
+			{
+				first++;
+			}
+			while (temp[last].surname > mid.surname)
+			{
+				last--;
+			}
+		}
+		if (mode == "name") {
+			while (temp[first].name < mid.name)
+			{
+				first++;
+			}
+			while (temp[last].name > mid.name)
+			{
+				last--;
+			}
+		}
+		if (mode == "age") {
+			while (temp[first].age < mid.age)
+			{
+				first++;
+			}
+			while (temp[last].age > mid.age)
+			{
+				last--;
+			}
+		}
+		if (last >= first)
+		{
+			per = temp[last];
+			temp[last] = temp[first];
+			temp[first] = per;
+			first++;
+			last--;
+		}
+	}
+	if (last > 0)
+	{
+		if (mode == "surname") {
+			sort(temp, last + 1, "surname");
+		}
+		if (mode == "name") {
+			sort(temp, last + 1, "name");
+		}
+		if (mode == "age") {
+			sort(temp, last + 1, "age");
+		}
+	}
+	if (first < maxi)
+	{
+		if (mode == "surname") {
+			sort(&temp[first], maxi - first, "surname");
+		}
+		if (mode == "name") {
+			sort(&temp[first], maxi - first, "name");
+		}
+		if (mode == "age") {
+			sort(&temp[first], maxi - first, "age");
+		}
+	}
 }
 
 template<typename T>
@@ -171,59 +201,19 @@ int main()
 			switch (data)
 			{
 			case 1: {
-				string per;
-				int per2;
-				sort(&mus[0].surname, axel);
+				sort(mus, axel, "surname");
 				print(mus, axel);
 				delete[] mus;
 				break;
 			}
 			case 2: {
-				string per;
-				int per2;
-				for (int j = 0; j < axel; j++)
-				{
-					for (int i = 0; i < axel - j - 1; i++)
-					{
-						if (mus[i].name > mus[i + 1].name)
-						{
-							per = mus[i].surname;
-							mus[i].surname = mus[i + 1].surname;
-							mus[i + 1].surname = per;
-							per = mus[i].name;
-							mus[i].name = mus[i + 1].name;
-							mus[i + 1].name = per;
-							per2 = mus[i].age;
-							mus[i].age = mus[i + 1].age;
-							mus[i + 1].age = per2;
-						}
-					}
-				}
+				sort(mus, axel, "name");
 				print(mus, axel);
 				delete[] mus;
 				break;
 			}
 			case 3: {
-				string per;
-				int per2;
-				for (int j = 0; j < axel; j++)
-				{
-					for (int i = 0; i < axel - j - 1; i++)
-					{
-						if (mus[i].age > mus[i + 1].age)
-						{
-							per = mus[i].surname;
-							mus[i].surname = mus[i + 1].surname;
-							mus[i + 1].surname = per;
-							per = mus[i].name;
-							mus[i].name = mus[i + 1].name;
-							mus[i + 1].name = per;
-							per2 = mus[i].age;
-							mus[i].age = mus[i + 1].age;
-							mus[i + 1].age = per2;
-						}
-					}
-				}
+				sort(mus, axel, "age");
 				print(mus, axel);
 				delete[] mus;
 				break;
